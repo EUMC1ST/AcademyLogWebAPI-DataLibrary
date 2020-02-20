@@ -10,7 +10,7 @@ using LogDataAccess;
 
 namespace WebApi.Controllers
 {
-    public class LogsController : ApiController
+    public class logsController : ApiController
     {
         [HttpPost]
         public HttpResponseMessage Save([FromBody] Log log)
