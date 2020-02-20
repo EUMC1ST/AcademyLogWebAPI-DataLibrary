@@ -27,6 +27,16 @@ namespace WebApi.Controllers
             return Request.CreateResponse(HttpStatusCode.Created, log);
         }
 
+        [HttpGet]
+        public IEnumerable<LogDataAccess.Log> Get()
+        {
+            using (Team4RMEntities BD = new Team4RMEntities())
+            {
+                var listado = BD.Log.ToList();
+                return listado;
+            }
+        }
+
         private void SendEmail(Log log)
         {
             System.Net.Mail.MailMessage mmsg = new System.Net.Mail.MailMessage();
